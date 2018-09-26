@@ -1,0 +1,17 @@
+<a href="/drinks">Back to Drinks Page</a>
+<h1 style="text-decoration:underline;padding-bottom:20px"><%= @id[:name] %></h1>
+<h3>Invented: <%= @id[:year] %></h3>
+<h3 style="padding-bottom:20px">Colour: <%= @id[:color] %></h3>
+<h3 style="padding-bottom:10px">Sizes:</h3>
+
+<ul class="list-group">
+  <% @id[:sizes].each do |size| %>
+  <li style="width:10%;margin:auto;font-size:20px;border:2px solid black;margin-bottom:5px;background-color:inherit" class="list-group-item"><%= size %></li>
+  <% end %>
+</ul>
+
+<a href="/drinks/<%= @id[:id] %>/edit">Edit Page</a>
+<form class="" action="index.html" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete" style="background-color:red;border:2px solid black;margin:20px;">
+</form>
