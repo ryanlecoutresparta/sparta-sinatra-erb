@@ -1,0 +1,10 @@
+<h1>Welcome to DrinksCo!</h1>
+
+<% @drinks.each do |drink| %>
+
+  <h3 style="padding-top:30px;text-decoration:underline">ID: <%= drink[:id] %></h3>
+  <h1 style="padding-bottom:30px"><%= drink[:name] %></h1>
+
+  <a href="/drinks/<%= drink[:id] %>">Go to Page</a>
+
+<% end %>

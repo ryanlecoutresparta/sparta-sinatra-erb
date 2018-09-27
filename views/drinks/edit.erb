@@ -1,0 +1,24 @@
+<form style="width:20%;margin:auto" action="/drinks/<%= @drink[:id] %>" method="POST">
+  <div class="form-group">
+    <label for="drinkName">Name</label>
+    <input style="text-align:center" type="text" class="form-control" placeholder="Name" name="name" value="<%= @drink[:name] %>">
+  </div>
+  <div class="form-group">
+    <label for="yearCreated">Year Invented</label>
+    <input style="text-align:center" type="text" class="form-control" placeholder="Year Invented" name="year" value="<%= @drink[:year] %>">
+  </div>
+  <div class="form-group">
+    <label for="color">Color</label>
+    <input style="text-align:center" type="text" class="form-control" placeholder="Color" name="color" value="<%= @drink[:color] %>">
+  </div>
+  <div style="padding-bottom:20px" class="form-group">
+    <label for="sizes">Sizes</label>
+    <input style="text-align:center" type="text" class="form-control" placeholder="Sizes" name="sizes" value="<%= @drink[:sizes].join ', ' %>">
+  </div>
+
+  <button type="submit" class="btn btn-default">Submit Your Drink!</button>
+
+  <% if (@drink[:id] != '') %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
